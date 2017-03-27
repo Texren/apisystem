@@ -121,7 +121,7 @@
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     <li>
-                        <a href="/index.php?s=/docapi/index.html" target="_self">API文档管理</a>
+                        <a href="/index.php?s=/docapi/index.html" target="_self">API文档管理系统</a>
                     </li>
                     <li>
                         <a href="/index.php?s=/Home/Index/index.html" target="_self">首页</a>
