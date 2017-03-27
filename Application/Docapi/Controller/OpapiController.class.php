@@ -213,6 +213,7 @@ class OpapiController extends ApisystemController {
                 action_log('update_apidoc', 'docapi', $id, session('user_auth.uid'), '修改Api文档');
                 $this->cache_catlist(1);
                 $this->success('修改成功！', U('edit?id=' . $id));
+                exit;
             } else {
                 $this->error($Model->getError());
             }
@@ -453,6 +454,7 @@ class OpapiController extends ApisystemController {
                 }
                 $this->cache_catlist(1);
                 $this->success('修改' . $model['title'] . '成功！', U('catlists?model=' . $model['name']));
+                exit;
             } else {
                 $this->error($Model->getError());
             }
