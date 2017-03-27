@@ -23,12 +23,118 @@
         .content-table tr {line-height: 17px;}
         #params_table, #headers_table {margin-bottom: 15px;}
         #params_table thead tr, #headers_table thead tr, #response_table thead tr {line-height: 12px;}
+
+
+
+        body > .navbar {
+            padding: 5px;
+            font-size: 13px;
+            background-color: #1b1b1b;
+        }
+        .navbar-fixed-top {
+            top: 0;
+        }
+        .navbar-fixed-top, .navbar-fixed-bottom {
+            position: fixed;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+            margin-bottom: 0;
+        }
+        .navbar {
+            *position: relative;
+            *z-index: 2;
+            margin-bottom: 20px;
+            overflow: visible;
+        }
+        .navbar-inverse .navbar-inner {
+            background-color: #1b1b1b;
+            background-image: -moz-linear-gradient(top, #222222, #111111);
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+            background-image: -webkit-linear-gradient(top, #222222, #111111);
+            background-image: -o-linear-gradient(top, #222222, #111111);
+            background-image: linear-gradient(to bottom, #222222, #111111);
+            background-repeat: repeat-x;
+            border-color: #252525;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+        }
+        .navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+            -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
+            padding-right: 0;
+            padding-left: 0;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+        }
+        .navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+            border-width: 0 0 1px;
+        }
+
+        .navbar .brand {
+            font-size: 20px;
+            font-weight: 200;
+            color: #777777;
+            text-shadow: 0 1px 0 #ffffff;
+        }
+        .brand {
+            float:left;
+        }
+        .brand img{
+            max-width: 100%;
+            vertical-align: middle;
+            border: 0;
+        }
+
+        .nav-collapse.collapse {
+            float: left;
+            height: auto !important;
+            overflow: visible !important;
+        }
+        .nav-collapse.collapse {
+            height: auto;
+            overflow: visible;
+        }
+        .nav li {
+            font-size: 13px;
+            line-height: 20px;
+        }
+        .nav li a{
+            font-size: 13px;
+            color: #FFF;
+        }
+
     </style>
     <link rel="stylesheet" type="text/css" href="images/JSONFormatter.css" />
     <link rel="stylesheet" type="text/css" href="images/jquery.dialogbox.css" />
 </head>
 <body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="/index.php?s=/Home/index/index.html" title="ApiSystem文档管理系统"><img src="/Public/Docapi/images/logo-index.png"
+                                                                                                     style="height: 25px;margin-top: 0"></a>
 
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li>
+                        <a href="/index.php?s=/docapi/index.html" target="_self">API文档管理</a>
+                    </li>
+                    <li>
+                        <a href="/index.php?s=/Home/Index/index.html" target="_self">首页</a>
+                    </li>
+                    <li>
+                        <a href="/tools/testapi/" target="_self">POST & GET测试</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
 <div class='container'>
     <h3 class='explainer'>在线HTTP POST/GET接口测试工具 -  Apisystem.cn</h3>
 
