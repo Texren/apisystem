@@ -1,9 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>在线 TTP GET/POST模拟请求测试工具 - Apisystem.cn</title>
-    <meta name="Keywords" content="HTTP接口测试,GET/POST模拟请求测试工具,apisystem.cn" />
-    <meta name="Description" content="HTTP GET和POST测试，并且提供测试返回值,apisystem.cn" />
+    <title>在线HTTP GET/POST模拟请求测试工具 - Apisystem.cn</title>
+    <meta name="keywords" content="HTTP接口测试,GET/POST模拟请求测试工具,APISystem文档管理系统,APISystem接口管理系统,Apisystem,接口管理系统,Texren,www.apisystem.cn" />
+    <meta name="description" content="APISystem文档管理系统是一个开源API接口文档管理系统， ApiSystem将原来用word编写API文档流程中解放出来，只需要按照填写文本框即可生成接口文档，管理文档也很轻松，同时还可以配置可见及所得的调试工具，API接口也可以一键导出word文档让你既可以在线分权限分享也可线下分享，是中小企业IT团队开发的福音。" />
+    <meta name="generator" content="www.ApiSystem.cn" />
+    <meta name="author" content="Texren  QQ:174463651 Smith77 QQ:3246932472" />
+    <meta name="copyright" content="ApiSystem文档管理系统 © 2014-2017 ApiSystem.cn V2.3.0118" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -124,10 +127,16 @@
                         <a href="/index.php?s=/docapi/index.html" target="_self">API文档管理系统</a>
                     </li>
                     <li>
-                        <a href="/index.php?s=/Home/Index/index.html" target="_self">首页</a>
+                        <a href="/index.php?s=/Home/article/index/category/help.html" target="_self">开发帮助</a>
                     </li>
                     <li>
-                        <a href="/tools/testapi/" target="_self">POST & GET测试</a>
+                        <a href="/index.php?s=/docapi/index.html" target="_self">API文档管理</a>
+                    </li>
+                    <li>
+                        <a href="/index.php?s=/Home/index/toolsTestApi.html" target="_self">POST & GET测试工具</a>
+                    </li>
+                    <li>
+                        <a href="http://bbs.apisystem.cn/" target="_self">交流论坛</a>
                     </li>
                 </ul>
             </div>
@@ -146,15 +155,6 @@
                 <select id="api_method" class="select">
                     <option value="GET">GET</option>
                     <option value="POST" selected="">POST</option>
-                    <option value="PUT">PUT</option>
-                    <option value="PATCH">PATCH</option>
-                    <option value="DELETE">DELETE</option>
-                    <option value="COPY">COPY</option>
-                    <option value="HEAD">HEAD</option>
-                    <option value="OPTIONS">OPTIONS</option>
-                    <option value="LINK">LINK</option>
-                    <option value="UNLINK">UNLINK</option>
-                    <option value="PURGE">PURGE</option>
                 </select>
             </div>
             <div class='span five xs-six strong'>

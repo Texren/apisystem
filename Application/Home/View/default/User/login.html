@@ -1,80 +1,7 @@
 <extend name="Base/common" />
 
 <block name="body">
-<style>
-  #main-container{background: transparent;}
-  .footer{width: 100%;position: fixed;bottom: 0;margin: 0;}
-  #login-panel{width: 1000px;position: relative;margin: 0 auto;height: 1px;}
-  #login-panel .span-left{position: absolute;top: 100px;left: 0;width: 400px;}
-  .down-left{ min-height: 300px;color: #FFF;margin-top:30px;}
-  .down-big-en{font-size: 3em;line-height: 1.5;text-align: right;
-      font-weight: 200;
-      color: #fff; /* redeclare to override the `.jumbotron a` */
-      -webkit-transition: none;
-      -moz-transition: none;
-      transition: none;
-  }
-  .down-big-ch{font-size: 4em;line-height: 1.2;text-align: right;
-      font-weight: 200;
-      color: #fff; /* redeclare to override the `.jumbotron a` */
-      -webkit-transition: none;
-      -moz-transition: none;
-      transition: none;
-  }
-  .down-line{text-align: center;margin: 20px 0 10px 0;}
-  .down-btn{width: 150px;color: #EFF1F5;background:#7ab5d3;display: block;float: right}
-  /* Download button */
-  .down-btn {
-      padding: 19px 24px;
-      font-size: 24px;
-      font-weight: 200;
-      color: #fff; /* redeclare to override the `.jumbotron a` */
-      border: 0;
-      -webkit-border-radius: 6px;
-      -moz-border-radius: 6px;
-      border-radius: 6px;
-      -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
-      -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
-      -webkit-transition: none;
-      -moz-transition: none;
-      transition: none;
-  }
-  .down-btn:hover {
-      -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
-      -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
-  }
-  .down-btn:active {
-      -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
-      -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
-      box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
-  }
-  .down-help{
-      color: #747474;text-align: center;line-height: 2.2;
-  }
-  .down-help a{
-      color: #747474;
-      font-weight: 200;
-      -webkit-transition: none;
-      -moz-transition: none;
-      transition: none;
-  }
-
-
-  #login-panel .span12{position: absolute;top: 100px;right: 0;width: 360px;border: 2px solid #eee;background: #FFFFFF;}
-  .span12 .container{width: 100%;text-align: center;}
-  .verify{display: inline-block;vertical-align: top;}
-  .verify img{width: 100px;height: 35px;}
-  .controls{margin: 0 auto;text-align: center;}
-  input.span1{width: 150px;}
-  .t-align-left{text-align: left;width: 270px;}
-  input[type="text"], input[type="password"]{height: 25px;line-height: 25px;}
-  .foot-text{margin-bottom: 20px;width: 270px;}
-  .foot-text a{color: #747474;}
-  .clear-float::after{display: block;content: ' ';clear: both;}
-  .btn{color: #EFF1F5;background: #86CE2F;width: 100%;}
-</style>
+<link href="/Public/Docapi/css/default.css" rel="stylesheet">
 <section id="login-panel">
     <div class="span-left">
         <div class="down-left">
@@ -90,55 +17,83 @@
 
     </div>
     <div class="span12">
-        <div class="container">
-            <h3>用户登录</h3>
+        <if condition="is_login()">
 
-        </div>
-        <form class="login-form" action="__SELF__" method="post">
-
-          <div class="control-group">
-            <div class="controls">
-              <input type="text" id="inputEmail" class="span3" placeholder="请输入用户名"  ajaxurl="/member/checkUserNameUnique.html" errormsg="请填写1-16位用户名" nullmsg="请填写用户名" datatype="*1-16" value="" name="username">
+            <div class="container">
+                <h3>已登录用户</h3>
             </div>
-          </div>
-          <div class="control-group">
-            <div class="controls">
-              <input type="password" id="inputPassword"  class="span3" placeholder="请输入密码"  errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="password">
-            </div>
-          </div>
-          <div class="control-group">
-            <div class="controls">
-              <input type="text" id="inputPassword" class="span1" placeholder="请输入验证码"  errormsg="请填写5位验证码" nullmsg="请填写验证码" datatype="*5-5" name="verify">
-              <div class="verify">
-                <img class="verifyimg reloadverify" alt="点击切换" src="{:U('verify')}" style="cursor:pointer;">
+            <div class="control-group">
+                <div class="controls t-align-center">
+                    <h1>{:get_username()}</h1>
+                    <ul class="countapi">
+                        <li>
+                            <span>接口分类数：</span>{$apiCount.api}
+                        </li>
+                        <li>
+                            <span>接口总个数：</span>{$apiCount.categoryapi}
+                        </li>
+                        <li>
+                            <span>登录次数：</span>{$memberInfo.login}
+                        </li>
 
+                        <li>
+                            <span>最后登录IP：</span>{$memberInfo.last_login_ip|long2ip}
+                        </li>
+                        <li>
+                            <span>登录时间：</span>{$memberInfo.last_login_time|date='y-m-d H:i:s',###}
+                        </li>
+
+                    </ul>
+
+                    <a href="{:U('/Docapi/Index')}" >
+                        <button type="button" class="btn mgb">进入接口管理系统</button>
+                    </a>
+                </div>
+            </div>
+       <else/>
+            <div class="container">
+                <h3>用户登录</h3>
+            </div>
+            <form class="login-form" action="__SELF__" method="post">
+
+              <div class="control-group">
+                <div class="controls">
+                  <input type="text" id="inputEmail" class="span3" placeholder="请输入用户名"  ajaxurl="/member/checkUserNameUnique.html" errormsg="请填写1-16位用户名" nullmsg="请填写用户名" datatype="*1-16" value="" name="username">
+                </div>
               </div>
-            </div>
-          </div>
-          <!-- <div class="control-group">
-            <label class="control-label"></label>
-            <div class="controls">
-                <img class="verifyimg reloadverify" alt="点击切换" src="{:U('verify')}" style="cursor:pointer;">
-            </div>
-            <div class="controls Validform_checktip text-warning"></div>
-          </div> -->
-          <div class="control-group">
-            <div class="controls t-align-left">
-              <label class="checkbox">
-                <input type="checkbox" name="autologin"> 自动登陆
-              </label>
-              <button type="submit" class="btn">Login</button>
-                <div class="controls Validform_checktip text-warning"></div>
-            </div>
-          </div>
-          <div class="foot-text clear-float">
-            <div class="pull-right">
-              <a href="{:U('User/register')}">立即注册</a> |
-              <a href="#">忘记密码？</a>
-            </div>
-          </div>
-        </form>
-    </div>
+              <div class="control-group">
+                <div class="controls">
+                  <input type="password" id="inputPassword"  class="span3" placeholder="请输入密码"  errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="password">
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="controls">
+                  <input type="text" id="inputPassword" class="span1" placeholder="请输入验证码"  errormsg="请填写5位验证码" nullmsg="请填写验证码" datatype="*5-5" name="verify">
+                  <div class="verify">
+                    <img class="verifyimg reloadverify" alt="点击切换" src="{:U('verify')}" style="cursor:pointer;">
+
+                  </div>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="controls t-align-left">
+                  <label class="checkbox">
+                    <input type="checkbox" name="autologin"> 自动登陆
+                  </label>
+                  <button type="submit" class="btn">Login</button>
+                    <div class="controls Validform_checktip text-warning"></div>
+                </div>
+              </div>
+              <div class="foot-text clear-float">
+                <div class="pull-right">
+                  <a href="{:U('User/register')}">立即注册</a> |
+                  <a href="#">忘记密码？</a>
+                </div>
+              </div>
+            </form>
+        </div>
+
+    </if>
 </section>
 </block>
 

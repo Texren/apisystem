@@ -18,7 +18,7 @@ class UserController extends HomeController {
 
 	/* 用户中心首页 */
 	public function index(){
-		
+
 	}
 
 	/* 注册页面 */
@@ -87,6 +87,19 @@ class UserController extends HomeController {
 			}
 
 		} else { //显示登录表单
+			$member_id = is_login();
+			if($member_id){
+				$name = 'docapi';
+				$map=array('status'=>'1');
+				$apiCount['api'] = M($name)->where($map)->count();
+				$name = 'categoryapi';
+				$map=array('status'=>1);
+				$apiCount['categoryapi'] = M($name)->where($map)->count();
+				$memberInfo = M('member')->where(array('uid'=>$member_id))->find();
+				$this->assign('apiCount',$apiCount);
+				$this->assign('memberInfo',$memberInfo);
+
+			}
 			$this->display();
 		}
 	}
