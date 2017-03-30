@@ -122,6 +122,12 @@ class OpapiController extends ApisystemController {
         if(IS_POST){
             $Model=M($name);
             $str=$Model->create();
+            if(empty($str['title'])){
+                $this->error('接口名称不能为空！');
+            }
+            if(empty($str['apiurl'])){
+                $this->error('接口地址不能为空！');
+            }
             $request=array_rotate($str['request']);
             $response=array_rotate($str['response']);
             $str['request']=serialize($request); //var_export($request,true);
@@ -190,6 +196,12 @@ class OpapiController extends ApisystemController {
         if (IS_POST) {
             $Model = M($name);
             $str = $Model->create();
+            if(empty($str['title'])){
+                $this->error('接口名称不能为空！');
+            }
+            if(empty($str['apiurl'])){
+                $this->error('接口地址不能为空！');
+            }
             $request = array_rotate($str['request']);
             $response = array_rotate($str['response']);
             $str['request'] = serialize($request); //var_export($request,true);

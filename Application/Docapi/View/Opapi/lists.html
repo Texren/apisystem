@@ -41,9 +41,9 @@
                     <volist name="list_data" id="data">
 
                         <li class="p-xs">
-                            <h4><a name="p{$data['id']}">{$data['title']}</a>  <a href={:U('Opapi/view?id='.$data['id'])} class=""><i class="fa fa-eye text-danger"></i></a>
+                            <h4 style="float:left"><a name="p{$data['id']}">{$data['title']}</a>  <a href={:U('Opapi/view?id='.$data['id'])} class=""><i class="fa fa-eye text-danger"></i></a>
                                 <a href={:U('Opapi/edit?id='.$data['id'])} ><i class="fa fa-pencil text-danger"></i></a></h4>
-
+                            <span style="float: right"><a href={:U('Opapi/del?id='.$data['id'])} target="_parent" title="删除接口" >删除</a></span>
                         </li>
 
                         <table class="table table-bordered table-hover" >
