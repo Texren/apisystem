@@ -13,25 +13,25 @@ $(function() {
 // +----------------------------------------------------------------------
 // Full height of right content
 /*function fix_height() {
-    //var heightWithoutNavbar = $("body > #page-wrapper").height() - 77.25;
-    //$(".main-page").css("min-height", heightWithoutNavbar + "px");
-    //alert(heightWithoutNavbar);
-    //var navbarHeigh = $('nav.navbar-default').height();
-    var wrapperHeigh = $('#page-wrapper').height();
-    //var headerHeight = $('#header-wrapper').height();
-    //var rightHeight = $(window).height()-headerHeight-5;
-    ////if(navbarHeigh > wrapperHeigh){
-    alert(wrapperHeigh);
-    $('#page-wrapper').css("min-height", wrapperHeigh + "px");
-    ////}
-    //
-    //$('#left-wrapper').css("min-height", rightHeight  + "px");
-    //$('#page-wrapper').css("min-height", rightHeight  + "px");
-    //$('#apiSystemContent').css("min-height", rightHeight  + "px");
+ //var heightWithoutNavbar = $("body > #page-wrapper").height() - 77.25;
+ //$(".main-page").css("min-height", heightWithoutNavbar + "px");
+ //alert(heightWithoutNavbar);
+ //var navbarHeigh = $('nav.navbar-default').height();
+ var wrapperHeigh = $('#page-wrapper').height();
+ //var headerHeight = $('#header-wrapper').height();
+ //var rightHeight = $(window).height()-headerHeight-5;
+ ////if(navbarHeigh > wrapperHeigh){
+ alert(wrapperHeigh);
+ $('#page-wrapper').css("min-height", wrapperHeigh + "px");
+ ////}
+ //
+ //$('#left-wrapper').css("min-height", rightHeight  + "px");
+ //$('#page-wrapper').css("min-height", rightHeight  + "px");
+ //$('#apiSystemContent').css("min-height", rightHeight  + "px");
 
 
-}
-fix_height();*/
+ }
+ fix_height();*/
 
 //Loads the correct sidebar on window load,
 //collapses the sidebar on window resize.
@@ -42,7 +42,7 @@ $(function() {
         width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;
         if (width < 768) {
             $('div.navbar-collapse').addClass('collapse');
-            topOffset = 100; // 2-row-menu
+            topOffset = 50; // 2-row-menu
         } else {
             $('div.navbar-collapse').removeClass('collapse');
         }
