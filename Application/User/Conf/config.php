@@ -22,7 +22,7 @@
 
 define('UC_APP_ID', 1); //应用ID
 define('UC_API_TYPE', 'Model'); //可选值 Model / Service
-define('UC_AUTH_KEY', 'f_a^J~Ru{Y)k1%LMP}KT`!5&X>O4rCx,#/n<U;AV'); //加密KEY
+define('UC_AUTH_KEY', C('DATA_AUTH_KEY')); //加密KEY
 define('UC_DB_DSN', C('DB_TYPE') . '://' . C('DB_USER') . ':' . C('DB_PWD') . '@' . C('DB_HOST') . ':' . C('DB_PORT') . '/' . C('DB_NAME'));
 define('UC_TABLE_PREFIX', C('DB_PREFIX'));
 
