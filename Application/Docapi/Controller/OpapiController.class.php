@@ -709,7 +709,7 @@ class OpapiController extends ApisystemController {
         $page = $page ? $page : 1; //默认显示第一页数据
 
         $name = 'docapi';
-        $row    =  10 ;
+        $row    =  200 ;
         $map=array('status'=>'1');
         $data = M($name)
             /* 查询指定字段，不指定则查询所有字段 */
